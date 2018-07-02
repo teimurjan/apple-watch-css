@@ -1,0 +1,150 @@
+html, body {
+    background: #ccc;
+    height: 100%;
+    width: 100%;
+}
+
+@-o-keyframes clockRun {
+    100% {
+        -o-transform: rotateZ(360deg);
+           transform: rotateZ(360deg);
+    }
+}
+
+@keyframes clockRun {
+    100% {
+        -webkit-transform: rotateZ(360deg);
+           -moz-transform: rotateZ(360deg);
+             -o-transform: rotateZ(360deg);
+                transform: rotateZ(360deg);
+    }
+}
+
+@-moz-keyframes clockRun {
+    100% {
+        -moz-transform: rotateZ(360deg);
+    }
+}
+
+@-webkit-keyframes clockRun {
+    100% {
+        -webkit-transform: rotateZ(360deg);
+    }
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+            justify-content: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+            align-items: center;
+}
+
+#root .watch {
+    position: absolute;
+    height: 120px;
+    width: 120px;
+}
+
+#root .watch .watch-outter {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 1.2px solid gray;
+    border-radius: 50%;
+}
+
+#root .watch .watch-outter .watch-inner {
+    position: absolute;
+    top: 4%;
+    bottom: 4%;
+    left: 4%;
+    right: 4%;
+    border-radius: 50%;
+    border: 1.2px solid gray;
+}
+
+#root .watch .origin {
+    position: absolute;
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    border: 1px solid #FFC300;
+    background: #FFC300;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    -o-transform: translate(-50%, -50%);
+       transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+#root .watch .watch-hands {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+            justify-content: center;
+}
+
+#root .watch .watch-hands .second {
+    z-index: 4;
+    -o-animation: clockRun 60s infinite linear;
+       animation: clockRun 60s infinite linear;
+    -moz-animation: clockRun 60s infinite linear;
+    -webkit-animation: clockRun 60s infinite linear;
+    position: absolute;
+    height: 60%;
+    width: 2%;
+    -o-transform-origin: 50% 83.5%;
+       transform-origin: 50% 83.5%;
+    -moz-transform-origin: 50% 83.5%;
+    -webkit-transform-origin: 50% 83.5%;
+    background: #FFC300;
+}
+
+#root .watch .watch-hands .minute {
+    z-index: 3;
+    -o-animation: clockRun 3600s infinite linear;
+       animation: clockRun 3600s infinite linear;
+    -moz-animation: clockRun 3600s infinite linear;
+    -webkit-animation: clockRun 3600s infinite linear;
+    position: absolute;
+    height: 50%;
+    width: 3%;
+    -o-transform-origin: 50% 100%;
+       transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -webkit-transform-origin: 50% 100%;
+    background: white;
+    border-radius: 30%;
+}
+
+#root .watch .watch-hands .hour {
+    z-index: 2;
+    -o-animation: clockRun 43200s infinite linear;
+       animation: clockRun 43200s infinite linear;
+    -moz-animation: clockRun 43200s infinite linear;
+    -webkit-animation: clockRun 43200s infinite linear;
+    position: absolute;
+    top: 10%;
+    height: 40%;
+    width: 3%;
+    -o-transform-origin: 50% 100%;
+       transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -webkit-transform-origin: 50% 100%;
+    background: white;
+    border-radius: 30%;
+}
